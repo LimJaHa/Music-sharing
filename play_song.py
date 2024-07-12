@@ -24,7 +24,7 @@ def play_track(uri):
 
     # 첫 번째 장치에서 재생
     device_id = devices['devices'][0]['id']
-    print(device_id)
+    print("device id is..", device_id)
     sp.start_playback(device_id=device_id, uris=[uri])
     print(f"Playing track: {uri}")
 
@@ -33,3 +33,6 @@ track_uri = input("Enter the Spotify track URI: ")
 
 # 트랙 재생
 play_track(track_uri)
+
+#예뻤어 링크
+# https://open.spotify.com/track/3HAkoNmThZhyFejhpRXXYI?si=5bd17a0f636b4015
