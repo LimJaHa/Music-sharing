@@ -30,3 +30,5 @@ def play_music():
     play_button.click()
 
 
+open_spotify()
+play_music()
