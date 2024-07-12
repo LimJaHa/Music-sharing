@@ -36,10 +36,11 @@ for device in devices['devices']:
 if device_id:
     # 특정 트랙 재생 (예: Spotify URI 'spotify:track:6rqhFgbbKwnb9MLmUQDhG6')
     sp.start_playback(device_id=device_id, uris=['spotify:track:3HAkoNmThZhyFejhpRXXYI'])
+    time.sleep(5)
     
     # 재생 상태 확인 및 로그 출력
-    playback = sp.current_playback()
-    #print(playback)
+    # playback = sp.current_playback()
+    # print(playback)
     
 
 else:
@@ -48,7 +49,8 @@ else:
 
 print("노래 재생중")
 
-
+playback = sp.current_playback()
+print(playback)
     
 # 스포티파이 API 인증
 #scope = "user-modify-playback-state user-read-playback-state"

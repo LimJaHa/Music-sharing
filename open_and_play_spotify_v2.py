@@ -5,7 +5,6 @@ import webbrowser
 def open_spotify():
     url = "https://www.spotify.com"
     webbrowser.get("chromium-browser").open(url)
-    time.sleep(10)  # 페이지 로딩 시간 대기
 
 def play_music():
     # 스포티파이에서 재생 버튼을 클릭하기 위한 selenium 사용
