@@ -7,12 +7,17 @@ CLIENT_ID = '14a5c95dc664471599ccfaf532ba51a6'
 CLIENT_SECRET = '6c9eb1848f4c486b896b75da7f974776'
 REDIRECT_URI = 'http://localhost:8888/callback'
 
-# 스포티파이 API 인증
-scope = "user-modify-playback-state user-read-playback-state"
+
+scope = "user-library-read user-library-modify user-read-playback-state user-modify-playback-state"
+
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
                                                client_secret=CLIENT_SECRET,
-                                               redirect_uri=REDIRECT_URI,
-                                               scope=scope))
+                                               redirect_uri=REDIRECT_URI,scope=scope, cache_path='/path/to/.cache'))
+
+
+# 스포티파이 API 인증
+#scope = "user-modify-playback-state user-read-playback-state"
+#sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI,scope=scope))
 
 # 트랙 URI를 입력받아 재생하는 함수
 def play_track(uri):
