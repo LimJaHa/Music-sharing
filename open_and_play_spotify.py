@@ -17,6 +17,8 @@ def wait_for_wifi():
             time.sleep(5)
 
 
+
+
 # 크로미움 웹 브라우저로 스포티파이 웹사이트를 여는 함수
 def open_spotify():
     chrome_options = Options()
