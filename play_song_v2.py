@@ -12,7 +12,7 @@ scope = "user-library-read user-library-modify user-read-playback-state user-mod
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
                                                client_secret=CLIENT_SECRET,
-                                               redirect_uri=REDIRECT_URI,scope=scope, cache_path='/home/limjaha/Downloads/Music-sharing-main/.cache'))
+                                               redirect_uri=REDIRECT_URI,scope=scope))
 
 # 사용자 정보 확인
 user = sp.current_user()
@@ -39,10 +39,15 @@ if device_id:
     
     # 재생 상태 확인 및 로그 출력
     playback = sp.current_playback()
-    print(playback)
+    #print(playback)
+    
 
 else:
     print("Web Player (Chrome) 디바이스를 찾을 수 없습니다.")
+
+
+print("노래 재생중")
+
 
     
 # 스포티파이 API 인증
