@@ -1,6 +1,7 @@
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import time
 
 # 환경 변수 설정
 CLIENT_ID = '14a5c95dc664471599ccfaf532ba51a6'
@@ -36,7 +37,6 @@ for device in devices['devices']:
 if device_id:
     # 특정 트랙 재생 (예: Spotify URI 'spotify:track:6rqhFgbbKwnb9MLmUQDhG6')
     sp.start_playback(device_id=device_id, uris=['spotify:track:3HAkoNmThZhyFejhpRXXYI'])
-    time.sleep(5)
     
     # 재생 상태 확인 및 로그 출력
     # playback = sp.current_playback()
