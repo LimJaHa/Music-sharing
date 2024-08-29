@@ -16,15 +16,35 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
                                                redirect_uri=REDIRECT_URI,
                                                scope=scope))
 
+
+
+
+
+
 # 현재 활성화된 장치 가져오기
 devices = sp.devices()
 if devices['devices']:
     active_device_id = devices['devices'][0]['id']
     print(f"Active device ID: {active_device_id}")
-
-    # 볼륨 조절 (예: 50%로 설정)
-    volume_percent = 50
-    sp.volume(volume_percent, device_id=active_device_id)
-    print(f"Volume set to {volume_percent}%")
+    
 else:
     print("No active device found")
+
+# def previous_track():
+#     sp.previous_track(device_id=active_device_id)
+
+# previous_track()
+
+def toggle_playback():
+    playback = sp.current_playback()
+    
+    if playback is not None and playback['is_playing']:
+        # 음악이 재생 중인 경우
+        sp.pause_playback(device_id=playback['device']['id'])
+        print("음악을 일시정지했습니다.")
+    else:
+        # 음악이 일시정지 상태인 경우
+        sp.start_playback(device_id=playback['device']['id'])
+        print("음악을 재생했습니다.")
+
+toggle_playback()
