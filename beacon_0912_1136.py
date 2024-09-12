@@ -5,7 +5,7 @@ from firebase_admin import credentials, db  # 또는 firestore를 사용할 경�
 from bleak import BleakScanner
 
 # Firebase 초기화
-cred = credentials.Certificate("./pp-test-2bf23-firebase-adminsdk-q18cp-955c660b63.json")  # 다운로드한 비공개 키 파일 경로
+cred = credentials.Certificate("./pp-test-2bf23-firebase-adminsdk-q18cp-279046d453.json")  # 다운로드한 비공개 키 파일 경로
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://pp-test-2bf23-default-rtdb.firebaseio.com/'  # Firebase 실시간 데이터베이스 URL 또는 Firestore
 })
